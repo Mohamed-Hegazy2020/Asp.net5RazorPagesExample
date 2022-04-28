@@ -1,0 +1,55 @@
+﻿@page
+@model Asp.net5RazorPagesExample.Pages.User.ServicesModel
+
+@{
+    ViewData["Title"] = "Services";
+    Layout = "~/Pages/Shared/_UserLayout.cshtml";
+}
+
+<h1>Services</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Service[0].NameAr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Service[0].NameEn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Service[0].DescriptionAr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Service[0].DescriptionEn)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Service) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameAr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionAr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionEn)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

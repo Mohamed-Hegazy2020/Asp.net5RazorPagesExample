@@ -1,0 +1,55 @@
+﻿@page
+@model Asp.net5RazorPagesExample.Areas.Admin.Pages.CompanyData.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>CompanyMainData</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CompanyMainData.NameAr" class="control-label"></label>
+                <input asp-for="CompanyMainData.NameAr" class="form-control" />
+                <span asp-validation-for="CompanyMainData.NameAr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyMainData.NameEn" class="control-label"></label>
+                <input asp-for="CompanyMainData.NameEn" class="form-control" />
+                <span asp-validation-for="CompanyMainData.NameEn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyMainData.Address" class="control-label"></label>
+                <input asp-for="CompanyMainData.Address" class="form-control" />
+                <span asp-validation-for="CompanyMainData.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyMainData.Email" class="control-label"></label>
+                <input asp-for="CompanyMainData.Email" class="form-control" />
+                <span asp-validation-for="CompanyMainData.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyMainData.Phone" class="control-label"></label>
+                <input asp-for="CompanyMainData.Phone" class="form-control" />
+                <span asp-validation-for="CompanyMainData.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="List">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

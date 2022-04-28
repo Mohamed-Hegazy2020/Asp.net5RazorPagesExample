@@ -1,0 +1,61 @@
+﻿@page
+@model Asp.net5RazorPagesExample.Areas.Admin.Pages.CompanyData.ListModel
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>List</h1>
+
+<p>
+    <a  asp-area="Admin" asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyMainData[0].NameAr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyMainData[0].NameEn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyMainData[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyMainData[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyMainData[0].Phone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CompanyMainData) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameAr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
