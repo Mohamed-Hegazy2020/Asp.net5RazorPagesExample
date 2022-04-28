@@ -129,6 +129,9 @@
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <data name="NameAr" xml:space="preserve">
     <value>Arabic Name</value>
   </data>
@@ -136,15 +139,21 @@
     <value>English Name</value>
   </data>
   <data name="net5RazorPagesExample" xml:space="preserve">
-    <value>net5RazorPagesExample</value>
+    <value>Company Name</value>
   </data>
   <data name="Phone" xml:space="preserve">
     <value>Phone</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
   </data>
   <data name="Products" xml:space="preserve">
     <value>Products</value>
   </data>
   <data name="Services" xml:space="preserve">
     <value>Services</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>Unit</value>
   </data>
 </root>

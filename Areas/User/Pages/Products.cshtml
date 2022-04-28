@@ -1,41 +1,46 @@
 ﻿@page
+@inject Asp.net5RazorPagesExample.Services.CommonLocalizationService localizer
 @model Asp.net5RazorPagesExample.Areas.User.Pages.ProductsModel
 
 @{
-    ViewData["Title"] = "Products";
+    ViewData["Title"] = @localizer.Get("Products");
     Layout = "~/Pages/Shared/_UserLayout.cshtml";
 }
 
-<h1>Products</h1>
+<h1>@localizer.Get("Products")</h1>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Product[0].Name)
+                @*@Html.DisplayNameFor(model => model.Product[0].Name)*@
+                @localizer.Get("Name")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Product[0].Price)
+                @*@Html.DisplayNameFor(model => model.Product[0].Price)*@
+                @localizer.Get("Price")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Product[0].Unit)
+                @*@Html.DisplayNameFor(model => model.Product[0].Unit)*@
+                @localizer.Get("Unit")
             </th>
-       
+
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Product) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Unit)
-            </td>
-       
-        </tr>
-}
+        @foreach (var item in Model.Product)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Unit)
+                </td>
+
+            </tr>
+        }
     </tbody>
 </table>
